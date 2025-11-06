@@ -172,8 +172,5 @@ def reconfigure_navigation(i18n_plugin, nav):
             items.extend(section.children)
     if items:
         nav.items = items
-        # [Page(title=[blank], url='/mkdocs-static-i18n/fr/'), Section(title='Topic1'), Section(title='Topic2'), Section(title='French only'), Section(title='English default')]
-        # =>
-        # [Page(title=[blank], url='/mkdocs-static-i18n/fr/'), Section(title='English default'), Section(title='French only'), Section(title='Topic1'), Section(title='Topic2')]
-        nav.items.sort(key=lambda x: x.title if x.title else "")
+
     return nav
